@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop-Stream</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+</head>
+<body style="margin: 0;padding: 0; overflow-y: hidden;">
+    <img id="image" style="width: 80%">
+    <script>
+        const socket = io.connect('http://localhost:3000/')
+        socket.on('stream', data =>{
+            const image = document.getElementById('image')
+            image.src = `data:image/jpeg;base64,${data}`
+        })
+    </script>
+</body>
+</html>
