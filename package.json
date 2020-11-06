@@ -1,10 +1,11 @@
 {
-  "name": "SocketIOTest",
+  "name": "FernwartungServer",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "debug": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
