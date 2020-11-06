@@ -9,10 +9,15 @@
 <body style="margin: 0;padding: 0; overflow-y: hidden;">
     <img id="image" style="width: 80%">
     <script>
+        let once = false;
         const socket = io.connect('http://localhost:3000/')
         socket.on('stream', data =>{
             const image = document.getElementById('image')
             image.src = `data:image/jpeg;base64,${data}`
+            if(!once){
+                once = true
+                console.log(`data:image/jpeg;base64,${data}`);
+            }
         })
     </script>
 </body>
